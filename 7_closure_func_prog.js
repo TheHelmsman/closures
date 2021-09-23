@@ -1,12 +1,14 @@
-function multiply(a) {
-  return function executeMultiply(b) {
-    return a * b;
+var multiply = function(a) {
+  // var a = a;
+  var executeMultiply = function(b) {
+      return a * b;
   }
+  return executeMultiply;
 }
 
-const double = multiply(2);
-double(3); // => 6
-double(5); // => 10
+var double = multiply(2);
+console.log(double(3));
+console.log(double(5));
 
 const triple = multiply(3);
-triple(4); // => 12
+console.log(triple(4)); // => 12
